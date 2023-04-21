@@ -1,13 +1,16 @@
-import Vue from 'vue'
-import App from './App.vue'
-import {Area} from 'vant'
+import Vue from 'vue';
+import App from './App.vue';
+import { Area } from 'vant';
 
-Vue.use(Area)
+Vue.use(Area);
 // Vue.use(Picker)s
 
-Vue.config.productionTip = false
+console.log('main');
 
+Vue.config.productionTip = false;
 
 new Vue({
-  render: h => h(App),
-}).$mount('#app')
+  render: h => {
+    return h(App);
+  },
+}).$mount('#app');
