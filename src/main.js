@@ -8,6 +8,7 @@ Vue.use(Area);
 console.log('main');
 
 Vue.config.productionTip = false;
+import './assets/style/global.less';
 
 new Vue({
   render: h => {
