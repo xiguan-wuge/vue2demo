@@ -20,7 +20,7 @@ module.exports = {
     'no-var': 'error', // 禁止使用var
     'prefer-const': 'error', // 建议使用const
     'no-const-assign': 'error', // 禁止修改使用const（no-const-assign）声明的变量
-    'object-shorthand': 'error', // 方法属性值简写
+    // 'object-shorthand': 'error', // 方法属性值简写
     'quote-props': ['error', 'as-needed'], // 只对那些无效的标示使用引号 ''
     'no-array-constructor': 'error', // 数组要求字面量赋值
     'no-new-object': 'error', // 对象使用字面值创建对象
@@ -39,11 +39,11 @@ module.exports = {
     'prefer-template': 'error', // 建议使用模板字符串
     'no-eval': 'error', // 禁止使用eval
     'no-useless-escape': 'error', // 不要使用不必要的转义字符
-    'func-style': 'error', // 用命名函数表达式而不是函数声明
-    'prefer-rest-params': 'error', // 建议使用rest参数而不是参数
+    // 'func-style': 'error', // 用命名函数表达式而不是函数声明
+    // 'prefer-rest-params': 'error', // 建议使用rest参数而不是参数
     'space-before-function-paren': ['error', 'never'], // 函数前不允许使用空格或
-    'space-before-blocks': ['error', 'always'], // 块前需要空格
-    'no-param-reassign': 'error', // 不允许重新分配函数参数
+    // 'space-before-blocks': ['error', 'always'], // 块前需要空格
+    // 'no-param-reassign': 'error', // 不允许重新分配函数参数
     'prefer-spread': 'error', // 建议使用spread语法而不是.apply（）
     'prefer-arrow-callback': 'error', // 建议使用箭头函数
     'arrow-spacing': 'error', // 箭头函数的箭头前后需要空格
@@ -93,13 +93,13 @@ module.exports = {
     'object-curly-spacing': ['error', 'always'], // 花括号 {} 里加空格
     'comma-spacing': ['error', { before: false, after: true }], //  , 前避免空格， , 后需要空格
     'key-spacing': ['error', { beforeColon: false }], // 在对象的属性中， 键值之间要有空格
-    'no-trailing-spaces': 'error', // 行末不要空格
+    // 'no-trailing-spaces': 'error', // 行末不要空格
     'no-multiple-empty-lines': 'error', // 避免出现多个空行。 在文件末尾只允许空一行
     'no-new-wrappers': 'error', // 不允许基元包装实例
     radix: ['error', 'as-needed'], // 需要基数参数
     //  "id-length": "error",
     camelcase: ['error', { properties: 'always' }], // 要求驼峰式命名对象、函数、实例
     'new-cap': 'off', // 要求构造函数名称以大写字母开头
-    'no-underscore-dangle': 'error', // 不要用前置或后置下划线
+    // 's': 'error', // 不要用前置或后置下划线
   },
 };
