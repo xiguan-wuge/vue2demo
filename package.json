@@ -9,6 +9,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "async-validator": "^4.2.5",
     "core-js": "^3.8.3",
     "vant": "^2.12.54",
     "vue": "^2.6.14"

@@ -24,17 +24,17 @@ module.exports = {
     'quote-props': ['error', 'as-needed'], // 只对那些无效的标示使用引号 ''
     'no-array-constructor': 'error', // 数组要求字面量赋值
     'no-new-object': 'error', // 对象使用字面值创建对象
-    'array-callback-return': 'error', // 在数组方法的回调中强制执行
-    'prefer-destructuring': [
-      'error',
-      {
-        array: true,
-        object: true,
-      },
-      {
-        enforceForRenamedProperties: false,
-      },
-    ], // 用对象的解构赋值来获取和使用对象某个或多个属性值
+    // 'array-callback-return': 'error', // 在数组方法的回调中强制执行
+    // 'prefer-destructuring': [
+    //   'error',
+    //   {
+    //     array: true,
+    //     object: true,
+    //   },
+    //   {
+    //     enforceForRenamedProperties: false,
+    //   },
+    // ], // 用对象的解构赋值来获取和使用对象某个或多个属性值
     quotes: ['error', 'single'], // string 统一用单引号 ''
     'prefer-template': 'error', // 建议使用模板字符串
     'no-eval': 'error', // 禁止使用eval
@@ -44,7 +44,7 @@ module.exports = {
     'space-before-function-paren': ['error', 'never'], // 函数前不允许使用空格或
     // 'space-before-blocks': ['error', 'always'], // 块前需要空格
     // 'no-param-reassign': 'error', // 不允许重新分配函数参数
-    'prefer-spread': 'error', // 建议使用spread语法而不是.apply（）
+    // 'prefer-spread': 'error', // 建议使用spread语法而不是.apply（）
     'prefer-arrow-callback': 'error', // 建议使用箭头函数
     'arrow-spacing': 'error', // 箭头函数的箭头前后需要空格
     //  "arrow-parens": ["error", "always"], // 在arrow函数参数中需要paren
@@ -60,7 +60,7 @@ module.exports = {
     'no-restricted-properties': 'error', // 做幂运算时用幂操作符 **
     'one-var': ['off', 'always'], // 强制在函数中单独声明变量
     'no-multi-assign': 'error', // 不要使用连续变量分配
-    'no-plusplus': 'error', // 不要使用一元递增递减运算符（++， --）
+    // 'no-plusplus': 'error', // 不要使用一元递增递减运算符（++， --）
     'no-unused-vars': 'off', // 不允许有未使用的变量
     eqeqeq: ['error', 'always'], // 使用 === 和 !== 而不是 == 和 !=
     'no-case-declarations': 'error', // 不允许在case/default子句中使用词法声明
@@ -86,7 +86,7 @@ module.exports = {
       },
     ],
     //  "indent": ["error", 2, { "SwitchCase": 1}], // 强制2个空格
-    'keyword-spacing': ['error', { before: true }], // 在关键字前后强制使用一致的间距
+    // 'keyword-spacing': ['error', { before: true }], // 在关键字前后强制使用一致的间距
     'space-infix-ops': ['error', { int32Hint: false }], // 用空格来隔开运算符
     'padded-blocks': ['error', 'never'], // 不要故意留一些没必要的空白行
     'array-bracket-spacing': ['error', 'never'], // 方括号里不要加空格
