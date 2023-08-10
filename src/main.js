@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import App from './App.vue';
+import './directives/index';
 // import { Area } from 'vant';
 
 // Vue.use(Area);
