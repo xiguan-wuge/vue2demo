@@ -5,6 +5,7 @@ const path = require('path');
 const WconsoleTagPlugin = require('./src/plugins/WconsoleTagPlugin');
 module.exports = defineConfig({
   transpileDependencies: true,
+  lintOnSave: false,
   configureWebpack: {
     resolveLoader: {
       modules: ['node_modules', './src/loaders/'],
@@ -29,18 +30,23 @@ module.exports = defineConfig({
       },
     },
     module: {
-      // rules: [
-      //   {
-      //     test: /\.vue$/,
-      //     loader: 'wconsole-vue-loader',
-      //     exclude: /node_modules/,
-      //   },
-      //   {
-      //     test: /\.js$/,
-      //     loader: 'wconsole-js-loader',
-      //     exclude: /node_modules/,
-      //   },
-      // ],
+      rules: [
+        // {
+        //   test: /\.vue$/,
+        //   loader: 'wconsole-vue-loader',
+        //   exclude: /node_modules/,
+        // },
+        // {
+        //   test: /\.js$/,
+        //   loader: 'wconsole-js-loader',
+        //   exclude: /node_modules/,
+        // },
+        {
+          test: /\.less/,
+          loader: 'less-loader'
+        }
+      ],
+
     },
     plugins: [
       // new WconsoleTagPlugin()
@@ -49,5 +55,14 @@ module.exports = defineConfig({
       //   routes: ['/']
       // })
     ],
+    // css: {
+    //   loaderOptions: {
+    //     less: {
+    //       lessOptions: {
+    //         javascriptEnabled: true
+    //       }
+    //     }
+    //   }
+    // }
   },
 });

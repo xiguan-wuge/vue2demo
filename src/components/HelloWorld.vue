@@ -2,7 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <p>test1</p>
-    <checkbox-demo></checkbox-demo>
+    <!-- <checkbox-demo></checkbox-demo> -->
     <!-- <form-demo></form-demo> -->
     <!-- <div class="hhh">张三呢</div>
     <div @click="obj.c.d = 44444444444">点击修改： {{ obj.c.d }}</div>
@@ -11,6 +11,22 @@
     <input type="password" name="密码" v-focus>
     <p>vue指令参数介绍</p>
     <div v-demo:foo.a.b="message" class="text-left"></div> -->
+    <el-select
+      multiple
+      collapse-tags
+      v-model="selectedArray"
+      @change="changeSelect"
+      @remove-tag="removeTag"
+      placeholder="请选择"
+    >
+      <el-option label="全选" value="全选" @click.native="selectAll"></el-option>
+      <el-option
+        v-for="(item, index) in options"
+        :key="index"
+        :label="item.name"
+        :value="item.name"
+      ></el-option>
+    </el-select>
   </div>
 </template>
 
@@ -19,6 +35,8 @@
   import { tempFn } from '@/utils/temp';
   import formDemo from './form/demo';
   import checkboxDemo from './checkbox/demo.vue';
+  import { Select, Option } from 'element-ui';
+  import 'element-ui/lib/theme-chalk/index.css';
 
   tempFn();
   console.log('mConsole');
@@ -27,6 +45,8 @@
     components: {
       formDemo,
       checkboxDemo,
+      ElSelect: Select,
+      ElOption: Option,
     },
     props: {
       msg: String,
@@ -40,6 +60,14 @@
           },
         },
         message: 'hello directive',
+        selectedArray: [],
+        options: [
+          { name: '一一', label: 'one' },
+          { name: '二二', label: 'tow' },
+          { name: '三三', label: 'three' },
+          { name: '四四', label: 'four' },
+          { name: '五五', label: 'five' },
+        ],
       };
     },
     watch: {
@@ -54,6 +82,36 @@
     mounted() {
       console.log('------------', log);
       log('helloWorld mounted');
+    },
+    methods: {
+      selectAll() {
+        console.log('selectAll');
+        if (this.selectedArray.length < this.options.length) {
+          this.selectedArray = [];
+          this.options.map(item => {
+            this.selectedArray.push(item.name);
+          });
+          this.selectedArray.unshift('全选');
+        } else {
+          this.selectedArray = [];
+        }
+        console.log('this.selectedArray', this.selectedArray);
+      },
+      changeSelect(val) {
+        console.log('changeSelect', val);
+        if (!val.includes('全选') && val.length === this.options.length) {
+          this.selectedArray.unshift('全选');
+        } else if (val.includes('全选') && val.length - 1 < this.options.length) {
+          this.selectedArray = this.selectedArray.filter(item => {
+            return item !== '全选';
+          });
+        }
+      },
+      removeTag(val) {
+        if (val === '全选') {
+          this.selectedArray = [];
+        }
+      },
     },
   };
 </script>
